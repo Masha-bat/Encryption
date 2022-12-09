@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Affin_rec.cpp" />
     <ClCompile Include="Encryption.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Affin_rec.h" />
     <ClInclude Include="Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
