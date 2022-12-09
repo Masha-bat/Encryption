@@ -12,5 +12,6 @@ using namespace chrono;
 int main()
 {
 	Encryption p;
-	Galimov(p);
+	string word = "ABCD";
+	Galimov(word,p);
 }

@@ -12,4 +12,4 @@ void zapoln_alphavit(vector <char>& alphavit);
 
 void zapoln_keys(Encryption& p, vector <int>& alpha, vector <int>& beta, vector <char> alphavit);
 
-void Galimov(Encryption& p);
+void Galimov(string&word,Encryption& p);
