@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Affin_rec.cpp" />
     <ClCompile Include="Encryption.cpp" />
+    <ClCompile Include="Pleifer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Affin_rec.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Pleifer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

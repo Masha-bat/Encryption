@@ -5,6 +5,7 @@
 #include <chrono>
 #include "Header.h"
 #include "Affin_rec.h"
+#include "Pleifer.h"
 
 using namespace std;
 using namespace chrono;
@@ -27,6 +28,7 @@ int main()
 	Encryption p;
 
 	run(text, Galimov, p);
+	run(text, Encryption_pleifer, p);
 	//run(text, Hill, p);
 
 }
