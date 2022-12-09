@@ -26,7 +26,7 @@ void zapoln_keys(Encryption& p, vector <long>& alpha, vector <long>& beta, vecto
     beta[1] = p.d % alphavit.size();
 }
 
-void Galimov(string& word,Encryption& p)  //сама функция
+void Galimov(string& text,Encryption& p)  //сама функция
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     vector <char> alphavit(256);
@@ -50,14 +50,14 @@ void Galimov(string& word,Encryption& p)  //сама функция
             if (i == 0 || i == 1) //первые два раза коэф по вводу
             {
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size(); //позиция зашифрованной буквы
-                cout << alphavit[sh_poz];//вывожу зашифрованную букву          
+                //cout << alphavit[sh_poz];//вывожу зашифрованную букву          
             }
             else //тут после второй итерации ключи сами создаются по формуле
             {
                 alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphavit.size()); //считаю новую альфу
                 beta.push_back((beta[i - 2] + beta[i - 1]) % alphavit.size());  //считаю новую бетту
                 sh_poz = (poz * alpha[i] + beta[i]) % alphavit.size();             
-                cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
+                //cout << alphavit[sh_poz]; //вывожу зашифрованную букву               
             }
         }
     }

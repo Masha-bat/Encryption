@@ -26,6 +26,7 @@ int main()
 	string text = "ddbufhsvdfhvvbdgvhf";
 	Encryption p;
 
+	run(text, Galimov, p);
 	//run(text, Hill, p);
 
 }
