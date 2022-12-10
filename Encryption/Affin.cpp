@@ -119,7 +119,7 @@ void Affin_method(const std::string& word_to_shifr, Encryption p)
     int alfa = p.a = 13;
     int beta = p.b = 2;
     std::string alphabet = "\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-    std::cout << "Alphabet size: " << alphabet.size() << std::endl;
+    //std::cout << "Alphabet size: " << alphabet.size() << std::endl;
     //std::cout << "Input simple number of alphabet size:" << std::endl;
     //int alfa = GetCorrectNumber(1, (int)alphabet.size() - 1);
     while (NOD(alfa, (int)alphabet.size()) != 1) {
@@ -129,13 +129,13 @@ void Affin_method(const std::string& word_to_shifr, Encryption p)
     //std::cout << "Input random number (<Alphabet size):" << std::endl;
     //int beta = GetCorrectNumber(0, (int)alphabet.size() - 1);
     std::string shifr = Zashifr(alphabet, word_to_shifr, alfa, beta);
-    std::cout << "Output shifr: " << shifr << std::endl;
-    std::cout << "Try to rashifr our shifr:" << std::endl;
-    std::string word_after_rashifr = Rashif(shifr, alphabet);
-    while (word_after_rashifr != word_to_shifr) {
-        std::cout << "Rashifr word: " << word_after_rashifr << std::endl;
-        std::cout << "Rashifr is not equal word to shifr, new try:" << std::endl;
-        word_after_rashifr = Rashif(shifr, alphabet);
-    }
-    std::cout << "Rashifr correct word: " << word_after_rashifr << std::endl;
+    //std::cout << "Output shifr: " << shifr << std::endl;
+    //std::cout << "Try to rashifr our shifr:" << std::endl;
+    //std::string word_after_rashifr = Rashif(shifr, alphabet);
+    //while (word_after_rashifr != word_to_shifr) {
+      //  std::cout << "Rashifr word: " << word_after_rashifr << std::endl;
+       // std::cout << "Rashifr is not equal word to shifr, new try:" << std::endl;
+       // word_after_rashifr = Rashif(shifr, alphabet);
+    //}
+    //std::cout << "Rashifr correct word: " << word_after_rashifr << std::endl;
 }

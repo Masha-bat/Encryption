@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Affin.cpp" />
+    <ClCompile Include="Affin_rec.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="Pleifer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Affin_rec.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Pleifer.h" />
     <ClInclude Include="Affin.h" />
