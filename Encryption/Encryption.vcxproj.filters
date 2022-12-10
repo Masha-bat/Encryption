@@ -18,7 +18,7 @@
     <ClCompile Include="Encryption.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Affin_rec.cpp">
+    <ClCompile Include="Affin.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Pleifer.cpp">
@@ -29,7 +29,7 @@
     <ClInclude Include="Header.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Affin_rec.h">
+    <ClInclude Include="Affin.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Pleifer.h">
