@@ -7,6 +7,7 @@
 #include "Affin_rec.h"
 #include "Pleifer.h"
 #include "Affin.h"
+#include "vigenere.h"
 
 using namespace std;
 using namespace chrono;
@@ -31,6 +32,7 @@ int main()
 	run(text, Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
+	run(text, Encryption_vigenere, p);
 	//run(text, Hill, p);
 
 }
