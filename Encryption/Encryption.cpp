@@ -26,9 +26,8 @@ void run(string text, T func_name, Encryption p)
 
 int main()
 {
-	string text = "ddbufhsvdfhvvbdgvhf";
+	string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
-
 	run(text, Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);

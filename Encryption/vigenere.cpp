@@ -8,129 +8,45 @@
 
 
 using namespace std;
-//string D;
 
-//struct Encryption
-//{
-//    string text = "pipec";
-//    string keyword = "aklmn";
-//};
-/*void ops(string text, string keyword) //раст€гиваем ключ, если его длина меньше длины слова.
-{
-    if (text.length() >= keyword.length())
-    {
-        for (int i = 0; i < (text.length() / keyword.length()); i++)
-        {
-            D = D + keyword;
-        }
-    }
-    else {
-        for (int j = 0; j < (text.length() % keyword.length()); j++)
-        {
-            D = D + keyword[j];
-        }
-    }
+string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./0123456789:;<=>?@ ";
 
+// функци€ получени€ кода символа
+//ищем сивмол в алфавите и возращаем его номер.
+int keycode(char s) {
+    for (int i = 0; i < alphabet.length(); i++) {
+        if (s == alphabet[i]) return i;
+    }
+    return 0;
 }
 
-void Encode(vector <char> alphabet, string text, string keyword)
-{
+string Encode(string text, string key) {
     string code;
-    int poz = 0;//индекс буквы
-    char el;
-    int sh_key, sh_poz;
-    char sh_el;
-    for (size_t i = 0; i < text.length(); i++)
-    {
-        if (text.length() >= keyword.length())
-        {
-            for (int i = 0; i < (text.length() / keyword.length()); i++)
-            {
-                D = D + keyword;
-            }
-            for (int j = 0; j < (text.length() % p.keyword.length()); j++)
-            {
-                D = D + p.keyword[j];
-            }
-        }
-        else {
-            for (int j = 0; j < (text.length() % p.keyword.length()); j++)
-            {
-                D = D + p.keyword[j];
-            }
-        }
-
-        //keyword = keyword + keyword + keyword;
-        el = text[i];
-        vector<char>::iterator it = find(alphabet.begin(), alphabet.end(), el);
-        poz = distance(alphabet.begin(), it); //номер буквы в алфавите из слова
-
-        sh_el = D[i];//считываю по буквам пароль
-        vector<char>::iterator it2 = find(alphabet.begin(), alphabet.end(), sh_el);//нахожу итератор его позиции в алфавите
-        sh_key = distance(alphabet.begin(), it2); //нахожу его позицию в алфавите(парол€)
-        //sh_key2 = sh_key
-
-        sh_poz = (poz + sh_key) % alphabet.size(); //складываем номер буквы из слова на номер буквы из парол€
-
-        cout << alphabet[sh_poz];
-        //cout << "\n" << sh_key << endl;
-        //cout << "\n" << keyword.length() << endl;
-        //cout << "\n" << D << endl;
+    for (int i = 0; i < text.length(); i++) {
+        code += alphabet[(keycode(text[i]) + keycode(key[i % key.length()])) % alphabet.length()];
     }
-}*/
-void Encryption_vigenere(string& text, Encryption& p)
-{
-    vector <char> alphabet(256);
-    iota(alphabet.begin(), alphabet.end(), 'A');
+    return code;
+}
+
+string Decode(string text, string key) {
     string code;
-    int poz = 0;//индекс буквы
-    char el;
-    int sh_key, sh_poz;
-    char sh_el;
-    string D;
+    for (int i = 0; i < text.length(); i++) {
+        code += alphabet[(keycode(text[i]) - keycode(key[i % key.length()]) + alphabet.length()) % alphabet.length()];
+    }
+    return code;
+}
+
+void Encryption_vigenere(string& text, Encryption& p) {
+    string txt, key;
+    txt = text;
     p.keyword = "cat";
-    for (size_t i = 0; i < text.length(); i++)
-    {
-        if (text.length() >= p.keyword.length())//
-        {
-            for (int i = 0; i < (text.length() / p.keyword.length()); i++)
-            {
-                D = D + p.keyword;
-            }
-            for (int j = 0; j < (text.length() % p.keyword.length()); j++)
-            {
-                D = D + p.keyword[j];
-            }
-        }
-        //else {
-            //for (int j = 0; j < (text.length() % p.keyword.length()); j++)
-            //{
-              //  D = D + p.keyword[j];
-           // }
-       // }
+    key = p.keyword;
+    char x;
 
-        //keyword = keyword + keyword + keyword;
-        el = text[i];
-        vector<char>::iterator it = find(alphabet.begin(), alphabet.end(), el);
-        poz = distance(alphabet.begin(), it); //номер буквы в алфавите из слова
-
-        sh_el = D[i];//считываю по буквам пароль
-        vector<char>::iterator it2 = find(alphabet.begin(), alphabet.end(), sh_el);//нахожу итератор его позиции в алфавите
-        sh_key = distance(alphabet.begin(), it2); //нахожу его позицию в алфавите(парол€)
-        //sh_key2 = sh_key
-
-        sh_poz = (poz + sh_key) % alphabet.size(); //складываем номер буквы из слова на номер буквы из парол€
-
-        //cout << alphabet[sh_poz]; //19 символов по итогу
-        //cout << "\n" << sh_key << endl;
-        //cout << "\n" << keyword.length() << endl;
-        //cout << "\n" << D << endl;
-    }
-    //setlocale(LC_ALL, "Russian");
-
-    //vector <char> alphabet(256);
-    //iota(alphabet.begin(), alphabet.end(), 'A');
-    //string keyword = p.keyword;
-    //string text = p.text;
-    //Encode(alphabet, text, keyword);
+    for (auto& c : txt) c = toupper(c);
+    for (auto& c : key) c = toupper(c);
+    string q = Encode(txt, key);
+    //cout << "Encode: " << q << endl;
+    //cout << "Decode: " << Decode(q, key) << endl;
+ 
 }
