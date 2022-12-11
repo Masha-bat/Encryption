@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 #include <cctype>
 #include <chrono>
 #include "Header.h"
@@ -26,7 +27,15 @@ void run(string text, T func_name, Encryption p)
 
 int main()
 {
-	string text = "krasava, ruki v ushi and <>pognal,./";
+	string text;
+	ifstream file;
+	file.open("txt.txt");
+	if (file.is_open())
+	{
+		getline(file >> ws, text);
+	}
+	file.close();
+	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
 	run(text, Galimov, p);
 	run(text, Encryption_pleifer, p);
