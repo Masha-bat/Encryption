@@ -8,6 +8,7 @@
 #include "Pleifer.h"
 #include "Affin.h"
 #include "vigenere.h"
+#include "Hill.h"
 
 using namespace std;
 using namespace chrono;
@@ -32,6 +33,6 @@ int main()
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);
-	//run(text, Hill, p);
+	run(text, Hill_encryption, p);
 
 }
