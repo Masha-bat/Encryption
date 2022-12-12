@@ -15,10 +15,10 @@ void zapoln_keys(Encryption& p, vector <long>& alpha, vector <long>& beta, vecto
     alpha.resize(2);
     beta.resize(2);
 
-    p.a = 1;
+  /*  p.a = 1;
     p.b = 1;
     p.c = 1;
-    p.d = 1;
+    p.d = 1;*/
 
     alpha[0] = p.a % alphavit.size();
     alpha[1] = p.b % alphavit.size();
@@ -26,23 +26,23 @@ void zapoln_keys(Encryption& p, vector <long>& alpha, vector <long>& beta, vecto
     beta[1] = p.d % alphavit.size();
 }
 
-void Galimov(string& text,Encryption& p)  //сама функци€
+void Affin_rec_Galimov(string text,Encryption p)  //сама функци€
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     vector <char> alphavit(256);
     vector <long> alpha, beta;
-    string slovo = "ABCD";
+    //string slovo = "ABCD";
     char el;
     zapoln_alphavit(alphavit);//алфавит заполн€ю
     zapoln_keys(p, alpha, beta, alphavit);//ключи забираютс€ из структуры
-    kolvo = slovo.length();//смотрю количество букв в слове
+    kolvo = text.length();//смотрю количество букв в слове
     for (int i = 0; i < kolvo; i++)//на каждую букву шаг
     {
-        el = slovo[i];//беру нужную букву
+        el = text[i];//беру нужную букву
         vector<char>::iterator it = find(alphavit.begin(), alphavit.end(), el); //нахожу эту букву в алфавите и беру итератор
         if (it == alphavit.end())//проверка на нахождение буквы
         {
-            cout << "Element " << el << " not found" << endl;//ну не найдено пон€тно же
+            //cout << "Element " << el << " not found" << endl;//ну не найдено пон€тно же
         }
         else //а если найдена
         {
@@ -61,5 +61,5 @@ void Galimov(string& text,Encryption& p)  //сама функци€
             }
         }
     }
-    cout << endl;
+    //cout << endl;
 }

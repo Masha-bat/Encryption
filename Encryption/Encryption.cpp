@@ -29,7 +29,6 @@ Encryption setKeys(int a = 0, int b = 0, int c = 0, int d = 0, string keyword=""
 template <typename T>
 void run(string text, T func_name, Encryption p)
 {
-
 	auto start = steady_clock::now();
 	func_name(text, p);
 	auto end = steady_clock::now();
@@ -50,8 +49,8 @@ int main()
 	file.close();
 	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
-	p = setKeys(1, 2, 3, 4);
-	run(text, Galimov, p);
+	p = setKeys(1, 2, 3, 4, "keyword");
+	run(text, Affin_rec_Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);
