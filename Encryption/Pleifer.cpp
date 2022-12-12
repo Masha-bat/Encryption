@@ -10,15 +10,6 @@
 
 using namespace std;
 
-//void PrintMatrix(char(&matrix)[5][5]) {
-//    for (int i = 0; i < 5; i++) {
-//        for (int j = 0; j < 5; j++) {
-//            cout << matrix[i][j] << " ";
-//        }
-//        cout << endl;
-//    }
-//}
-
 void Encryption_pleifer(string& text, Encryption& p)
 {
     vector<int> index;
@@ -82,6 +73,13 @@ void Encryption_pleifer(string& text, Encryption& p)
         //cout << "PR4";
     };
 
+    ////print matrix
+    //for (int i = 0; i < 5; i++) {
+    //    for (int j = 0; j < 5; j++) {
+    //        cout << matrix[i][j] << " ";
+    //    }
+    //    cout << endl;
+    //}
 
     //find id
     for (int i = 0; i < text.length(); i++) {
@@ -95,32 +93,41 @@ void Encryption_pleifer(string& text, Encryption& p)
         }
     }
     //enmessage
+    //string outputword = "";
     int a = 0, b = 0;
+    /*cout << "encrypted sequence: " << endl;*/
     for (int i = 0; i <= index.size() - 3; i += 4) {
         a = index[i + 3] + 1;
         // one line
         if (index[i] == index[i + 2] && a < 5) {
-             matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
         }
-        // one line border
+        // one line at border
         if (index[i] == index[i + 2] && a >= 5) {
             a = 0;
-             matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i]][index[i + 1] + 1] << matrix[index[i + 2]][a];
         }
         b = index[i + 2] + 1;
         // one column
         if (index[i + 1] == index[i + 3] && b < 5) {
-              matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
         }
-        // one column border
+        // one column at border
         if (index[i + 1] == index[i + 3] && b >= 5) {
             b = 0;
-             matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
+            /*cout.width(5);
+            cout <<*/ matrix[index[i] + 1][index[i + 1]] << matrix[b][index[i + 3]];
         }
 
         if (index[i] != index[i + 2] && index[i + 1] != index[i + 3]) {
-             matrix[index[i + 2]][index[i + 1]] << matrix[index[i]][index[i + 3]];
+            /*cout.width(5);
+            cout << */matrix[index[i + 2]][index[i + 1]] << matrix[index[i]][index[i + 3]];
         }
+        //cout << outputword;
     }
+
 }
-    
+
