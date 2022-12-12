@@ -5,6 +5,7 @@
 #include <chrono>
 #include "Header.h"
 #include "Affin_rec.h"
+#include "sykin.h"
 
 using namespace std;
 using namespace chrono;
