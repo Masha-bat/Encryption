@@ -1,19 +1,38 @@
 ﻿#include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 #include <cctype>
 #include <chrono>
 #include "Header.h"
 #include "Affin_rec.h"
+<<<<<<< HEAD
 #include "sykin.h"
+=======
+#include "Pleifer.h"
+#include "Affin.h"
+#include "vigenere.h"
+#include "Hill.h"
+>>>>>>> 511c7db4006c867c6107f4f7ea97a7b2362e7900
 
 using namespace std;
 using namespace chrono;
 
+Encryption setKeys(int a = 0, int b = 0, int c = 0, int d = 0, string keyword="")
+{
+	Encryption pack;
+	pack.a = a;
+	pack.b = b;
+	pack.c = c;
+	pack.d = d;
+	pack.keyword = keyword;
+	return pack;
+}
+
+
 template <typename T>
 void run(string text, T func_name, Encryption p)
 {
-
 	auto start = steady_clock::now();
 	func_name(text, p);
 	auto end = steady_clock::now();
@@ -24,10 +43,22 @@ void run(string text, T func_name, Encryption p)
 
 int main()
 {
-	string text = "ddbufhsvdfhvvbdgvhf";
+	string text;
+	ifstream file;
+	file.open("txt.txt");
+	if (file.is_open())
+	{
+		getline(file >> ws, text);
+	}
+	file.close();
+	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
-
-	run(text, Galimov, p);
-	//run(text, Hill, p);
+	p = setKeys(1, 2, 3, 4, "keyword");
+	//run(text, Affin_rec_Galimov, p);
+	run(text, Encryption_pleifer, p);
+	run(text, Affin_method, p);
+	run(text, Encryption_vigenere, p);
+	p = setKeys(0, 0, 0, 0, "lovestrin");
+	run(text, Hill_encryption, p);
 
 }
