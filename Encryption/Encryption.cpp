@@ -55,7 +55,7 @@ int main()
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);
-	p = setKeys(0, 0, 0, 0, "lovestring");
+	p = setKeys(0, 0, 0, 0, "lovestrin");
 	run(text, Hill_encryption, p);
 
 }

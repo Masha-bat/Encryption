@@ -58,9 +58,15 @@ string Hill_encryption(string word, Encryption p)
 		 int i(0);
 		 string outputword = "";
 		 while (i < word.length() - 1) {
-			 for (int j(0); j < 3; ++j) {
+			 for (int j(0); j < divider; ++j)
+			 {
+				 int column = 0;
+				 for (int m(0); m < divider-1; ++m)
+				 {
+					 column += word[i + m] * key[j * divider + m];
+				 }
 				 //при шифровании по Хиллу мы используем mod256 для замены символов
-				 int letter = (word[i] * key[j * 3 + 0] + word[i + 1] * key[j * 3 + 1] + word[i + 2] * key[j * 3 + 2]) % 256;
+				 int letter = column % 256;
 				 outputword += (char)letter;
 			 }
 			 i += 3;
