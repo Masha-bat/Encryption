@@ -50,7 +50,7 @@ int main()
 	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
 	p = setKeys(1, 2, 3, 4, "keyword");
-	run(text, Affin_rec_Galimov, p);
+	//run(text, Affin_rec_Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);

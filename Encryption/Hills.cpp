@@ -69,7 +69,7 @@ string Hill_encryption(string word, Encryption p)
 				 int letter = column % 256;
 				 outputword += (char)letter;
 			 }
-			 i += 3;
+			 i += divider;
 		 }
 
 		 //cout << outputword << endl;
