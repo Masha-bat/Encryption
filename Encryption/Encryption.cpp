@@ -14,6 +14,18 @@
 using namespace std;
 using namespace chrono;
 
+Encryption setKeys(int a = 0, int b = 0, int c = 0, int d = 0, string keyword="")
+{
+	Encryption pack;
+	pack.a = a;
+	pack.b = b;
+	pack.c = c;
+	pack.d = d;
+	pack.keyword = keyword;
+	return pack;
+}
+
+
 template <typename T>
 void run(string text, T func_name, Encryption p)
 {
@@ -38,6 +50,7 @@ int main()
 	file.close();
 	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
+	p = setKeys(1, 2, 3, 4);
 	run(text, Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
