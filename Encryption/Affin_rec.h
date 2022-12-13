@@ -13,3 +13,8 @@ void zapoln_alphavit(vector <char>& alphavit);
 void zapoln_keys(Encryption& p, vector <int>& alpha, vector <int>& beta, vector <char> alphavit);
 
 void Affin_rec_Galimov(string text,Encryption p);
+
+
+
+
+void deshifr_Galimov(Encryption p);

@@ -50,11 +50,17 @@ int main()
 	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
 	p = setKeys(1, 2, 3, 4, "keyword");
-	run(text, Affin_rec_Galimov, p);
+	//run(text, Affin_rec_Galimov, p);
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);
 	p = setKeys(0, 0, 0, 0, "lovestring");
 	run(text, Hill_encryption, p);
 
+
+	cout << endl << endl << endl;
+	p = setKeys(2, 4, 6, 8, "keyword");
+	text = "ABCDEF";
+	Affin_rec_Galimov(text, p);
+	deshifr_Galimov(p);
 }
