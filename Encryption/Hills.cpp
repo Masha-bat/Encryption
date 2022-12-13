@@ -17,12 +17,12 @@ vector<int> KEY(string keyword)
 	double e = sqrt(keyword.length());
 	if (keyword == "")
 	{
-		cout << "Shifr Hilla: Error, enter a keyword" << endl;
+		cout << " Error, enter a keyword" << endl;
 		
 	}
 	else if (e != (trunc(e)))
 	{
-		cout << "Shifr Hilla: Error, enter a word whose number of characters is an integer when using the root ";
+		cout << " Error, enter a word whose number of characters is an integer when using the root ";
 		
 	}
 	else {
