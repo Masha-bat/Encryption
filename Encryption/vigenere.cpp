@@ -38,7 +38,7 @@ string Decode(string text, string key) {
     return code;
 }
 
-void Encryption_vigenere(string& text, Encryption& p) {
+void Encryption_vigenere(const string& text, Encryption& p) {
     string txt, key;
     txt = text;
     //p.keyword = "cat";

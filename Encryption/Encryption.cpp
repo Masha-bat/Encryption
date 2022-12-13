@@ -28,14 +28,15 @@ Encryption setKeys(int a = 0, int b = 0, int c = 0, int d = 0, string keyword=""
 
 
 template <typename T>
-void run(string text, T func_name, Encryption p)
+string run(const string text, T func_name, Encryption p)
 {
 	auto start = steady_clock::now();
-	func_name(text, p);
+	string shifr = func_name(text, p);
 	auto end = steady_clock::now();
 	auto elapsed_ms = duration_cast<microseconds>(end - start);
 	cout << elapsed_ms.count() << " microsec" << endl;
 	//cout << __func__ << endl;
+	return shifr;
 }
 
 
