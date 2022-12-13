@@ -10,8 +10,9 @@
 
 using namespace std;
 
-void Encryption_pleifer(string& text, Encryption& p)
+string Encryption_pleifer(string text, Encryption& p)
 {
+
     vector<int> index;
     string alphabet = "abcdefghijklmnoprstuvwxyz";
     char matrix[5][5];
@@ -128,6 +129,12 @@ void Encryption_pleifer(string& text, Encryption& p)
         }
         //cout << outputword;
     }
-
+    string shifr;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            shifr.push_back(matrix[i][j]);
+        }
+    }
+    return shifr;
 }
 
