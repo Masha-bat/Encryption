@@ -63,7 +63,7 @@ string Affin_rec_Galimov(const string& text, Encryption p)  //сама функция
                 if (i == 0 || i == 1) //первые два раза коэф по вводу
                 {
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size(); //позиция зашифрованной буквы
-                    cout << alphabet[sh_poz];//вывожу зашифрованную букву    
+                   // cout << alphabet[sh_poz];//вывожу зашифрованную букву    
                     sh_el = alphabet[sh_poz];
                     sh_text.push_back(sh_el);
                 }
@@ -72,7 +72,7 @@ string Affin_rec_Galimov(const string& text, Encryption p)  //сама функция
                     alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphabet.size()); //считаю новую альфу
                     beta.push_back((beta[i - 2] + beta[i - 1]) % alphabet.size());  //считаю новую бетту
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size();
-                    cout << alphabet[sh_poz]; //вывожу зашифрованную букву      
+                   // cout << alphabet[sh_poz]; //вывожу зашифрованную букву      
                     sh_el = alphabet[sh_poz];
                     sh_text.push_back(sh_el);
                 }
