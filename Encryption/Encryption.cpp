@@ -54,6 +54,7 @@ int main()
 	run(text, Affin_rec_Galimov, p);
 	p = setKeys(1, 2, 3, 4, "keyword");
 	run(text, Encryption_pleifer, p);
+	p = setKeys(13, 3, 0, 0, "keyword");
 	run(text, Affin_method, p);
 	p = setKeys(0, 0, 0, 0, "cat");
 	run(text, Encryption_vigenere, p);
