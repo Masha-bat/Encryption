@@ -32,7 +32,7 @@ void input_alphabet(string& alphabet) //заполнение алфавита всей кодировкой ACII
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!№;%:?*()_+-=@#$^&<>{}[]'/|.`~, АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 }
 
-void Affin_rec_Galimov(const string& text, Encryption p)  //сама функция
+string Affin_rec_Galimov(const string& text, Encryption p)  //сама функция
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     string alphabet,sh_text;
@@ -79,7 +79,7 @@ void Affin_rec_Galimov(const string& text, Encryption p)  //сама функция
             }
         }
     }
-    cout << endl;
+    return sh_text;
 }
 
 void deshifr_Galimov(string& sh_text,Encryption p)
