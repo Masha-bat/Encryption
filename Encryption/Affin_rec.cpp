@@ -29,14 +29,15 @@ void input_check_keys(Encryption& p, vector <long>& alpha, vector <long>& beta, 
 
 void input_alphabet(string& alphabet) //заполнение алфавита всей кодировкой ACII
 {
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!є;%:?*()_+-=@#$^&<>{}[]'/|.`~, ";
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!є;%:?*()_+-=@#$^&<>{}[]'/|.`~, јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„ЎўЏџ№ЁёяабвгдеЄжзийклмнопрстуфхцчшщъыьэю€";
 }
 
-void Affin_rec_Galimov(string text, Encryption p)  //сама функци€
+void Affin_rec_Galimov(const string& text, Encryption p)  //сама функци€
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
-    string alphabet;
+    string alphabet,sh_text;
     vector <long> alpha, beta;
+    char sh_el;
     char el;
     input_alphabet(alphabet);//алфавит заполн€ю
     input_check_keys(p, alpha, beta, alphabet);//ключи забираютс€ из структуры
@@ -62,35 +63,40 @@ void Affin_rec_Galimov(string text, Encryption p)  //сама функци€
                 if (i == 0 || i == 1) //первые два раза коэф по вводу
                 {
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size(); //позици€ зашифрованной буквы
-                    //cout << alphabet[sh_poz];//вывожу зашифрованную букву          
+                    cout << alphabet[sh_poz];//вывожу зашифрованную букву    
+                    sh_el = alphabet[sh_poz];
+                    sh_text.push_back(sh_el);
                 }
                 else //тут после второй итерации ключи сами создаютс€ по формуле
                 {
                     alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphabet.size()); //считаю новую альфу
                     beta.push_back((beta[i - 2] + beta[i - 1]) % alphabet.size());  //считаю новую бетту
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size();
-                    //cout << alphabet[sh_poz]; //вывожу зашифрованную букву               
+                    cout << alphabet[sh_poz]; //вывожу зашифрованную букву      
+                    sh_el = alphabet[sh_poz];
+                    sh_text.push_back(sh_el);
                 }
             }
         }
     }
+    cout << endl;
 }
 
-void deshifr_Galimov(Encryption p)
+void deshifr_Galimov(string& sh_text,Encryption p)
 {
     int kolvo = 0, poz = 0, sh_poz = 0;
     string alphabet;
     vector <long> alpha, beta;
-    string shslovo;
+    //string shslovo;
     char el;
-    cout << endl;
-    getline(cin >> ws, shslovo);
+    //cout << endl;
+   // getline(cin >> ws, shslovo);
     input_alphabet(alphabet);//алфавит заполн€ю
     input_check_keys(p, alpha, beta, alphabet);//ключи забираютс€ из структуры
-    kolvo = shslovo.length();//смотрю количество букв в слове
+    kolvo = sh_text.length();//смотрю количество букв в слове
     for (int i = 0; i < kolvo; i++)//на каждую букву шаг
     {
-        el = shslovo[i];//беру нужную букву
+        el = sh_text[i];//беру нужную букву
         string::iterator it = find(alphabet.begin(), alphabet.end(), el); //нахожу эту букву в алфавите и беру итератор
         if (it == alphabet.end())//проверка на нахождение буквы
         {
