@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <numeric>
-#include <algorithm>
+//#include <vector>
+//#include <numeric>
+//#include <algorithm>
 #include "Header.h"
 #include "vigenere.h"
 
@@ -38,7 +38,7 @@ string Decode(string text, string key) {
     return code;
 }
 
-void Encryption_vigenere(const string& text, Encryption& p) {
+string Encryption_vigenere(const string& text, Encryption& p) {
     string txt, key;
     txt = text;
     //p.keyword = "cat";
@@ -49,7 +49,8 @@ void Encryption_vigenere(const string& text, Encryption& p) {
     for (auto& c : txt) c = toupper(c);
     for (auto& c : key) c = toupper(c);
     string q = Encode(txt, key);
-    //cout << "Encode: " << q << endl;
-    //cout << "Decode: " << Decode(q, key) << endl;
+    cout << "Encode: " << q << endl;
+    cout << "Decode: " << Decode(q, key) << endl;
  
+    return q;
 }

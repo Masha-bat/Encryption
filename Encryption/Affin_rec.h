@@ -12,6 +12,6 @@ void input_check_keys(Encryption& p, vector <long>& alpha, vector <long>& beta, 
 
 void input_alphabet(string& alphabet);
 
-void Affin_rec_Galimov(string text, Encryption p);
+string Affin_rec_Galimov(const string& text, Encryption p);
 
-void deshifr_Galimov(Encryption p);
+void deshifr_Galimov(string& sh_text,Encryption p);
