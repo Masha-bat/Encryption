@@ -55,6 +55,7 @@ int main()
 	p = setKeys(1, 2, 3, 4, "keyword");
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
+	p = setKeys(0, 0, 0, 0, "cat");
 	run(text, Encryption_vigenere, p);
 	p = setKeys(0, 0, 0, 0, "lovestrin");
 	run(text, Hill_encryption, p);
