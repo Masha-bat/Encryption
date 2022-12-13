@@ -41,7 +41,7 @@ void Affin_rec_Galimov(string text, Encryption p)  //сама функци€
     input_alphabet(alphabet);//алфавит заполн€ю
     input_check_keys(p, alpha, beta, alphabet);//ключи забираютс€ из структуры
 
-    if (alpha[0] == 0 && alpha[1] == 0 && beta[0] == 0 && beta[1] == 0)
+    if (alpha[0] == 0 && alpha[1] == 0 && beta[0] == 0 && beta[1] == 0) //если ключи не подход€т
     {
 
     }
@@ -62,14 +62,14 @@ void Affin_rec_Galimov(string text, Encryption p)  //сама функци€
                 if (i == 0 || i == 1) //первые два раза коэф по вводу
                 {
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size(); //позици€ зашифрованной буквы
-                    cout << alphabet[sh_poz];//вывожу зашифрованную букву          
+                    //cout << alphabet[sh_poz];//вывожу зашифрованную букву          
                 }
                 else //тут после второй итерации ключи сами создаютс€ по формуле
                 {
                     alpha.push_back((alpha[i - 2] * alpha[i - 1]) % alphabet.size()); //считаю новую альфу
                     beta.push_back((beta[i - 2] + beta[i - 1]) % alphabet.size());  //считаю новую бетту
                     sh_poz = (poz * alpha[i] + beta[i]) % alphabet.size();
-                    cout << alphabet[sh_poz]; //вывожу зашифрованную букву               
+                    //cout << alphabet[sh_poz]; //вывожу зашифрованную букву               
                 }
             }
         }
@@ -103,7 +103,7 @@ void deshifr_Galimov(Encryption p)
             sh_poz = distance(alphabet.begin(), it) % alphabet.size();   //https://www.techiedelight.com/ru/find-index-element-vector-cpp/ нахожу позицию в алфавите
             if (i == 0 || i == 1) //первые два раза коэф по вводу
             {
-                while (((sh_poz - beta[i]) % alpha[i]) != 0 && sh_poz != beta[i])
+                while (((sh_poz - beta[i]) % alpha[i]) != 0 && sh_poz != beta[i]) //при шифровке иногда отбрасываетс€ размер алфавита через %, го это можно увидеть тк число нецелое получаетс€, вот € его и восстанавлиаю
                 {
                     int j = 1;
                     sh_poz = sh_poz + alphabet.size() * j;
