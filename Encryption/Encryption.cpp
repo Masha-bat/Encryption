@@ -35,6 +35,7 @@ void run(string text, T func_name, Encryption p)
 	auto end = steady_clock::now();
 	auto elapsed_ms = duration_cast<microseconds>(end - start);
 	cout << elapsed_ms.count() << " microsec" << endl;
+	//cout << __func__ << endl;
 }
 
 
@@ -50,14 +51,19 @@ int main()
 	file.close();
 	//string text = "krasava, ruki v ushi and <>pognal,./";
 	Encryption p;
+	cout << "Affine recurrent method: ";
 	p = setKeys(1, 3, 4, 5, "keyword");
 	run(text, Affin_rec_Galimov, p);
+	cout << "Pleifer method: ";
 	p = setKeys(0, 0, 0, 0, "cat");
 	run(text, Encryption_pleifer, p);
+	cout << "Affine method: ";
 	p = setKeys(13, 3, 0, 0, "keyword");
 	run(text, Affin_method, p);
+	cout << "Vigenere method: ";
 	p = setKeys(0, 0, 0, 0, "keyword");
 	run(text, Encryption_vigenere, p);
+	cout << "Hill method: ";
 	p = setKeys(0, 0, 0, 0, "lovestrin");
 	run(text, Hill_encryption, p);
 }
