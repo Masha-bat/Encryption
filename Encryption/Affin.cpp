@@ -114,7 +114,7 @@ std::string Rashif(const std::string& shifr, const std::string& alphabet) {
     return word_result;
 }
 
-void Affin_method(const std::string& word_to_shifr, Encryption p)
+std::string Affin_method(const std::string& word_to_shifr, Encryption p)
 {
     int alfa = p.a;
     int beta = p.b;
@@ -138,4 +138,5 @@ void Affin_method(const std::string& word_to_shifr, Encryption p)
        // word_after_rashifr = Rashif(shifr, alphabet);
     //}
     //std::cout << "Rashifr correct word: " << word_after_rashifr << std::endl;
+    return shifr;
 }
