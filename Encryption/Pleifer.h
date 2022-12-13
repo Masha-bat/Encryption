@@ -5,5 +5,5 @@
 #include <cctype>
 #include "Header.h"
 
-void Encryption_pleifer(string&text,Encryption&p);
+string Encryption_pleifer(string text,Encryption&p);
 
