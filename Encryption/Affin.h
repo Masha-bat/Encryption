@@ -9,6 +9,6 @@ int LOT(int a, int b);
 int Evklid(int a, int b, int c);
 std::string Zashifr(const std::string& alphabet, const std::string& word_to_shifr, const int& alfa, const int& beta);
 std::string Rashif(const std::string& shifr, const std::string& alphabet);
-void Affin_method(const std::string& word_to_shifr, Encryption p); //вызывать эту функцию
+std::string Affin_method(const std::string& word_to_shifr, Encryption p); //вызывать эту функцию
 
 
