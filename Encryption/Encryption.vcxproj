@@ -145,6 +145,7 @@
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="Hills.cpp" />
     <ClCompile Include="Pleifer.cpp" />
+    <ClCompile Include="sykin.cpp" />
     <ClCompile Include="vigenere.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="Header.h" />
     <ClInclude Include="Hill.h" />
     <ClInclude Include="Pleifer.h" />
+    <ClInclude Include="sykin.h" />
     <ClInclude Include="vigenere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
