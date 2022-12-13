@@ -6,14 +6,11 @@
 #include <chrono>
 #include "Header.h"
 #include "Affin_rec.h"
-<<<<<<< HEAD
 #include "sykin.h"
-=======
 #include "Pleifer.h"
 #include "Affin.h"
 #include "vigenere.h"
 #include "Hill.h"
->>>>>>> 511c7db4006c867c6107f4f7ea97a7b2362e7900
 
 using namespace std;
 using namespace chrono;
