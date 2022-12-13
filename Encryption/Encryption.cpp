@@ -59,9 +59,13 @@ int main()
 	run(text, Hill_encryption, p);
 
 
+	setlocale(LC_ALL, "Russian");
 	cout << endl << endl << endl;
-	p = setKeys(2, 4, 6, 8, "keyword");
-	text = "ABCDEF";
-	Affin_rec_Galimov(text, p);
-	deshifr_Galimov(p);
+	p = setKeys(1, 1, 1, 1, "keyword");
+	text = "Hello, my name is Aidar and i wanted to eating and just write this text to check";
+	//Affin_rec_Galimov(text, p);
+	//deshifr_Galimov(p);
+	//с новым ручным алфавитом
+	Affin_rec_Galimov2(text, p);
+	deshifr_Galimov2(p);
 }
