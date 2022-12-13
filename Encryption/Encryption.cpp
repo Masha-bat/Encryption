@@ -6,10 +6,14 @@
 #include <chrono>
 #include "Header.h"
 #include "Affin_rec.h"
+<<<<<<< HEAD
+#include "sykin.h"
+=======
 #include "Pleifer.h"
 #include "Affin.h"
 #include "vigenere.h"
 #include "Hill.h"
+>>>>>>> 511c7db4006c867c6107f4f7ea97a7b2362e7900
 
 using namespace std;
 using namespace chrono;
@@ -54,7 +58,7 @@ int main()
 	run(text, Encryption_pleifer, p);
 	run(text, Affin_method, p);
 	run(text, Encryption_vigenere, p);
-	p = setKeys(0, 0, 0, 0, "lovestring");
+	p = setKeys(0, 0, 0, 0, "lovestrin");
 	run(text, Hill_encryption, p);
 
 
