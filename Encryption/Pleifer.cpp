@@ -15,7 +15,7 @@ void Encryption_pleifer(string& text, Encryption& p)
     vector<int> index;
     string alphabet = "abcdefghijklmnoprstuvwxyz";
     char matrix[5][5];
-    p.keyword = "cat";
+    //p.keyword = "cat";
 
     // delete double
     for (int i = 1; i < p.keyword.length(); i++) {

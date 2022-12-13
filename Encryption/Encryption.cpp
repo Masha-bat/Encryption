@@ -52,11 +52,11 @@ int main()
 	Encryption p;
 	p = setKeys(1, 3, 4, 5, "keyword");
 	run(text, Affin_rec_Galimov, p);
-	p = setKeys(1, 2, 3, 4, "keyword");
+	p = setKeys(0, 0, 0, 0, "cat");
 	run(text, Encryption_pleifer, p);
 	p = setKeys(13, 3, 0, 0, "keyword");
 	run(text, Affin_method, p);
-	p = setKeys(0, 0, 0, 0, "cat");
+	p = setKeys(0, 0, 0, 0, "keyword");
 	run(text, Encryption_vigenere, p);
 	p = setKeys(0, 0, 0, 0, "lovestrin");
 	run(text, Hill_encryption, p);
