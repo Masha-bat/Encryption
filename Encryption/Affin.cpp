@@ -116,8 +116,8 @@ std::string Rashif(const std::string& shifr, const std::string& alphabet) {
 
 void Affin_method(const std::string& word_to_shifr, Encryption p)
 {
-    int alfa = p.a = 13;
-    int beta = p.b = 2;
+    int alfa = p.a;
+    int beta = p.b;
     std::string alphabet = "\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
     //std::cout << "Alphabet size: " << alphabet.size() << std::endl;
     //std::cout << "Input simple number of alphabet size:" << std::endl;

@@ -21,7 +21,9 @@ int keycode(char s) {
 }
 
 string Encode(string text, string key) {
-    string code;
+    string code;//keycode(text[i]) число каждой буквы текста
+    //keycode(key[i]) число каждой буквы ключа
+    //keycode(key[i % key.length()]) делим по модулю длины ключа, чтобы ключ растянулся по вводимому тексту
     for (int i = 0; i < text.length(); i++) {
         code += alphabet[(keycode(text[i]) + keycode(key[i % key.length()])) % alphabet.length()];
     }
@@ -31,7 +33,7 @@ string Encode(string text, string key) {
 string Decode(string text, string key) {
     string code;
     for (int i = 0; i < text.length(); i++) {
-        code += alphabet[(keycode(text[i]) - keycode(key[i % key.length()]) + alphabet.length()) % alphabet.length()];
+        code += alphabet[(keycode(text[i]) - keycode(key[i % key.length()]) + alphabet.length()) % alphabet.length()];//прибалвяем длину алфавита, чтобы избежать отрицательные числа
     }
     return code;
 }
@@ -39,10 +41,11 @@ string Decode(string text, string key) {
 void Encryption_vigenere(string& text, Encryption& p) {
     string txt, key;
     txt = text;
-    p.keyword = "cat";
+    //p.keyword = "cat";
     key = p.keyword;
     char x;
 
+    //если текст или ключ в разных регистрах, нам нужно привести с верхнему регистру(ЗАГЛАВНЫЕ БУКВЫ):
     for (auto& c : txt) c = toupper(c);
     for (auto& c : key) c = toupper(c);
     string q = Encode(txt, key);
